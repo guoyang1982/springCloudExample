@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/guoyang1982/springcloudconfig/  # 配置git仓库的地址
+          search-paths: testConfig                                # git仓库地址下的相对地址，可以配置多个，用,分割。
+      label: master
+server:
+  port: 9986
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: ${SERVER_IP:127.0.0.1}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8081/eureka/,http://127.0.0.1:8082/eureka/,http://127.0.0.1:8083/eureka/
