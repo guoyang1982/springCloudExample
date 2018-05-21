@@ -12,7 +12,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8083/eureka/,http://127.0.0.1:8082/eureka/
+      defaultZone: http://10.58.93.148:8083/eureka/,http://10.58.93.148:8082/eureka/
 ---
 spring:
   profiles: discovery2
@@ -24,7 +24,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8081/eureka/,http://127.0.0.1:8083/eureka/
+      defaultZone: http://10.58.93.148:8081/eureka/,http://10.58.93.148:8083/eureka/
 ---
 spring:
   profiles: discovery3
@@ -36,4 +36,4 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8082/eureka/,http://127.0.0.1:8081/eureka/
+      defaultZone: http://10.58.93.148:8082/eureka/,http://10.58.93.148:8081/eureka/
