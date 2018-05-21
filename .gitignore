@@ -1,0 +1,10 @@
+.DS_Store
+*.iml
+*.ipr
+*.iws
+/target/
+.classpath
+.project
+.settings/
+.idea/
+src/main/webapp/WEB-INF/classes/

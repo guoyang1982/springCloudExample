@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/config-client/config-client.iml" filepath="$PROJECT_DIR$/config-client/config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou-api/legou-api.iml" filepath="$PROJECT_DIR$/legou-api/legou-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou-common/legou-common.iml" filepath="$PROJECT_DIR$/legou-common/legou-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou-eureka/legou-eureka.iml" filepath="$PROJECT_DIR$/legou-eureka/legou-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou-server/legou-server.iml" filepath="$PROJECT_DIR$/legou-server/legou-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou-zuul/legou-zuul.iml" filepath="$PROJECT_DIR$/legou-zuul/legou-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new-legou.iml" filepath="$PROJECT_DIR$/new-legou.iml" />
+    </modules>
+  </component>
+</project>
