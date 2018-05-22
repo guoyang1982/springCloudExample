@@ -37,6 +37,10 @@ docker run -e SERVER_PORT=8765 -e SERVER_IP=10.58.93.146 -p 8765:8765 -t legou/l
 docker run -e SERVER_PORT=8088 -p 8088:8088 -t legou/legou-api
 
 docker run -e SERVER_PORT=8089 -p 8089:8089 -t legou/legou-api
+#### 3)限流
+http://10.58.93.148:8088/hystrix/monitor?stream=http%3A%2F%2F10.58.93.148%3A8088%2Fhystrix.stream
+#### 4)接口文档
+http://10.58.93.148:8088/swagger-ui.html#/hello-controler
 ### 4.启动网关
 #### 1）cd legou-zuul/target
 #### 2)启动网关
