@@ -18,7 +18,7 @@ spring:
         enabled: true
 
 server:
-  port: 9986
+  port: ${SERVER_PORT:9986}
 eureka:
   instance:
     prefer-ip-address: true

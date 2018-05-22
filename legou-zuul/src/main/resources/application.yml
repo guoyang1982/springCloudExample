@@ -3,7 +3,7 @@ eureka:
     serviceUrl:
       defaultZone: http://10.58.93.148:8081/eureka/,http://10.58.93.148:8082/eureka/,http://10.58.93.148:8083/eureka/
 server:
-  port: 8869
+  port: ${SERVER_PORT:8869}
 spring:
   application:
     name: legou-zuul

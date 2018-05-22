@@ -15,7 +15,7 @@ spring:
           zk-nodes: 10.58.93.148:2181
 #      uri: http://localhost:9996/
 server:
-  port: 8886
+  port: ${SERVER_PORT:8886}
 eureka:
   instance:
     prefer-ip-address: true
