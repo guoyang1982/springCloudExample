@@ -8,6 +8,15 @@ spring:
           uri: https://github.com/guoyang1982/springcloudconfig/  # 配置git仓库的地址
           search-paths: testConfig                                # git仓库地址下的相对地址，可以配置多个，用,分割。
       label: master
+    stream:
+      kafka:
+        binder:
+          brokers: 10.58.93.148:9092
+          zk-nodes: 10.58.93.148:2181
+    bus:
+      trace:
+        enabled: true
+
 server:
   port: 9986
 eureka:
@@ -17,3 +26,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://10.58.93.148:8081/eureka/,http://10.58.93.148:8082/eureka/,http://10.58.93.148:8083/eureka/
+management:
+  security:
+    enabled: false

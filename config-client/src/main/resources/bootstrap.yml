@@ -8,6 +8,11 @@ spring:
         enabled: true
         service-id: config-server
       profile: dev
+    stream:
+      kafka:
+        binder:
+          brokers: 10.58.93.148:9092
+          zk-nodes: 10.58.93.148:2181
 #      uri: http://localhost:9996/
 server:
   port: 8886
