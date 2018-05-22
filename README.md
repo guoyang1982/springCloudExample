@@ -50,5 +50,5 @@ mvn install docker:build
 2)启动两个服务
 docker run -e SERVER_PORT=6088 -p 6088:6088 -t legou/config-client
 docker run -e SERVER_PORT=6089 -p 6089:6089 -t legou/config-client
-改变配置文件，刷新配置管理端http://10.58.93.148:7088/bus/refresh 看是否bus正常，服务端能够获取更新后的配置
+改变配置文件，刷新配置管理端post http://10.58.93.148:7088/bus/refresh 看是否bus正常，服务端能够获取更新后的配置
 
