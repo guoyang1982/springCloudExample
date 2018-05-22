@@ -62,3 +62,21 @@ docker run -e SERVER_PORT=6089 -p 6089:6089 -t legou/config-client
 
 改变配置文件，刷新配置管理端post http://10.58.93.148:7088/bus/refresh 看是否bus正常，服务端能够获取更新后的配置
 
+## **三：docker基本命令使用**
+### 查看镜像
+docker images
+### 移除镜像
+docker rmi 镜像id或名
+### 查看运行的服务
+docker ps
+### 查看所有服务包含运行的
+docker ps -a
+### 停止容器服务
+docker stop 容器id或名
+### 启动容器
+docker start 容器id或名
+### 移除容器
+docker rm 容器id或名
+### 创建容器并运行
+docker run
+
