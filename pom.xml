@@ -16,6 +16,7 @@
         <module>legou-zuul</module>
         <module>config-server</module>
         <module>config-client</module>
+        <module>zipkin-server</module>
     </modules>
 
     <!-- spring cloud 配置 -->
