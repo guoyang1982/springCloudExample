@@ -6,6 +6,9 @@ import com.gy.legou.service.HelloService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,17 +21,27 @@ import javax.servlet.http.HttpServletRequest;
  * @Description: TODO
  * @date 2018/4/27 下午10:40
  */
+@RefreshScope
 @RestController
 public class HelloControler {
 
     @Autowired
+    private Environment env;
+    @Autowired
     HelloService helloService;
+
+    @Value("${foo}")
+    String foo;
+
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
     @RequestMapping(value = "/hi")
     public String hi(@RequestParam String name,HttpServletRequest req){
+        System.out.println(env.getProperty("foo", "undefined"));
 
         System.out.println((String)(req.getParameter("name")));
+        System.out.println(foo);
+
         return helloService.hiService(name);
     }
 

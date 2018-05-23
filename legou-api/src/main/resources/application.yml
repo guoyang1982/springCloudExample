@@ -1,9 +1,23 @@
 spring:
   application:
     name: legou-api
-  zipkin:
-    base-url: http://10.58.93.148:9888
-
+#  sleuth:
+#    sampler:
+#      percentage: 1.0
+#  zipkin:
+#    base-url: http://10.58.93.148:9888
+  cloud:
+    config:
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+      profile: dev
+    stream:
+      kafka:
+        binder:
+          brokers: 10.58.93.148:9092
+          zk-nodes: 10.58.93.148:2181
 eureka:
   instance:
     prefer-ip-address: true
@@ -13,3 +27,6 @@ eureka:
       defaultZone: http://10.58.93.148:8081/eureka/,http://10.58.93.148:8082/eureka/,http://10.58.93.148:8083/eureka/
 server:
   port: ${SERVER_PORT:8088}
+management:
+  security:
+    enabled: false
