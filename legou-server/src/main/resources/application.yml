@@ -10,3 +10,5 @@ server:
 spring:
   application:
     name: legou-server
+  zipkin:
+    base-url: http://10.58.93.148:9888
