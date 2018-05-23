@@ -27,10 +27,10 @@
         <!--<scope>test</scope>-->
         <!--</dependency>-->
 
-        <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-server</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.zipkin.java</groupId>-->
+            <!--<artifactId>zipkin-server</artifactId>-->
+        <!--</dependency>-->
 
         <!--zipkin依赖-->
         <!--此依赖会自动引入spring-cloud-sleuth-stream并且引入zipkin的依赖包-->
