@@ -21,6 +21,13 @@ spring:
         binder:
           brokers: 10.58.93.148:9092
           zk-nodes: 10.58.93.148:2181
+
+#  rabbitmq:
+#    host: 10.58.93.148
+#    port: 5672
+#  kafka:
+#    bootstrap-servers: 10.58.93.148:9092
+
 eureka:
   instance:
     prefer-ip-address: true
@@ -33,3 +40,9 @@ server:
 management:
   security:
     enabled: false
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.cloud.stream.binder.rabbit: DEBUG
+logging.level.org.springframework.cloud.sleuth: DEBUG
+logging.level.org.springframework.web.servlet.DispatcherServlet: DEBUG

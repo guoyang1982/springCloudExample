@@ -30,3 +30,10 @@ spring:
         binder:
           brokers: 10.58.93.148:9092
           zk-nodes: 10.58.93.148:2181
+#  rabbitmq:
+#    host: 10.58.93.148
+#    port: 5672
+#  kafka:
+#    bootstrap-servers: 10.58.93.148:9092
+logging.level.org.springframework.cloud.sleuth: DEBUG
+logging.level.org.springframework.web.servlet.DispatcherServlet: DEBUG
