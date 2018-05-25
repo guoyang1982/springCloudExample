@@ -69,8 +69,9 @@ docker run -e SERVER_PORT=6089 -p 6089:6089 -t legou/config-client
 ### 7.启动调用链跟踪的客户端和收集端（还没做数据持久化）
 #### 1）cd zipkin-server/
 mvn install docker:build
-#### 2)启动两个服务
+#### 2)启动服务
 docker run -e SERVER_PORT=9888 -p 9888:9888 -t legou/zipkin-server
+
 访问http://10.58.93.148:9888/zipkin/  刷新legu-api接口 看调用链信息
 
 ## **三：docker基本命令使用**
