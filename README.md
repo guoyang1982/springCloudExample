@@ -66,6 +66,13 @@ docker run -e SERVER_PORT=6089 -p 6089:6089 -t legou/config-client
 
 改变配置文件，刷新配置管理端post http://10.58.93.148:7088/bus/refresh 看是否bus正常，服务端能够获取更新后的配置
 
+### 7.启动调用链跟踪的客户端和搜集端（还没做数据持久化）
+#### 1）cd zipkin-server/
+mvn install docker:build
+#### 2)启动两个服务
+docker run -e SERVER_PORT=9888 -p 9888:9888 -t legou/zipkin-server
+访问http://10.58.93.148:9888/zipkin/  刷新legu-api接口 看调用链信息
+
 ## **三：docker基本命令使用**
 ### 查看镜像
 docker images
