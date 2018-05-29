@@ -92,3 +92,56 @@ docker rm 容器id或名
 ### 创建容器并运行
 docker run
 
+## 四：压力测试
+### grpc
+62952 fetches, 200 max parallel, 1.80374e+06 bytes, in 60 seconds
+28.6527 mean bytes/connection
+1049.2 fetches/sec, 30062.3 bytes/sec
+msecs/connect: 26.4334 mean, 3022.51 max, 2.482 min
+msecs/first-response: 163.119 mean, 2677.58 max, 10.935 min
+754 bad byte counts
+HTTP response codes:
+  code 200 -- 62198
+
+
+### grpc
+70564 fetches, 200 max parallel, 2.024e+06 bytes, in 60 seconds
+28.6831 mean bytes/connection
+1176.07 fetches/sec, 33733.3 bytes/sec
+msecs/connect: 24.5222 mean, 3033.06 max, 2.395 min
+msecs/first-response: 144.742 mean, 2008.77 max, 5.991 min
+771 bad byte counts
+HTTP response codes:
+  code 200 -- 69793
+
+### grpc：
+74420 fetches, 200 max parallel, 2.12973e+06 bytes, in 60 seconds
+28.6177 mean bytes/connection
+1240.33 fetches/sec, 35495.5 bytes/sec
+msecs/connect: 24.3851 mean, 3031.91 max, 2.719 min
+msecs/first-response: 136.102 mean, 1952.72 max, 2.371 min
+981 bad byte counts
+HTTP response codes:
+  code 200 -- 73439
+  
+### http:
+49650 fetches, 200 max parallel, 1.2211e+06 bytes, in 60.0004 seconds
+24.5942 mean bytes/connection
+827.494 fetches/sec, 20351.5 bytes/sec
+msecs/connect: 23.2076 mean, 3007.93 max, 2.266 min
+msecs/first-response: 216.189 mean, 2215.93 max, 2.765 min
+806 bad byte counts
+HTTP response codes:
+  code 200 -- 48844
+  
+### http:
+46998 fetches, 200 max parallel, 1.16855e+06 bytes, in 60.0008 seconds
+24.8638 mean bytes/connection
+783.289 fetches/sec, 19475.6 bytes/sec
+msecs/connect: 17.2478 mean, 3006.46 max, 2.524 min
+msecs/first-response: 236.328 mean, 2182.71 max, 8.751 min
+256 bad byte counts
+HTTP response codes:
+  code 200 -- 46742
+
+
