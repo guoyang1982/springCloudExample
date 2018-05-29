@@ -25,6 +25,6 @@ zipkin:
 #      queue: zipkin
 
 server:
-  port: port: ${SERVER_PORT:9888}
+  port: ${SERVER_PORT:9888}
 logging:
   level.org.springframework.cloud: DEBUG
