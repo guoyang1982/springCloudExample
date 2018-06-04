@@ -22,24 +22,42 @@ import io.grpc.util.RoundRobinLoadBalancerFactory;
 @EnableConfigurationProperties
 @ConditionalOnClass({GrpcChannelFactory.class})
 public class GrpcClientAutoConfiguration {
-
+    /**
+     * 初始化配置项 ip端口等，和springcloud的application.yml绑定
+     * @return
+     */
     @ConditionalOnMissingBean
     @Bean
     public GrpcChannelsProperties grpcChannelsProperties() {
         return new GrpcChannelsProperties();
     }
-
+    /**
+     * 实例化注册类，查找所有应用端定义的grpc的拦截器配置类，并把注册类注入到应用的拦截器的配置类里，
+     * 由应用的拦截器配置类把应用定义的grpc拦截器放到框架注册类的List<ServerInterceptor>里
+     * @return
+     */
     @Bean
     public GlobalClientInterceptorRegistry globalClientInterceptorRegistry() {
         return new GlobalClientInterceptorRegistry();
     }
 
+    /**
+     * 初始化负载均衡实例
+     * @return
+     */
     @ConditionalOnMissingBean
     @Bean
     public LoadBalancer.Factory grpcLoadBalancerFactory() {
         return RoundRobinLoadBalancerFactory.getInstance();
     }
 
+    /**
+     *
+     * @param channels
+     * @param loadBalancerFactory
+     * @param globalClientInterceptorRegistry
+     * @return
+     */
     @ConditionalOnMissingBean(value = GrpcChannelFactory.class, type = "org.springframework.cloud.client.discovery.DiscoveryClient")
     @Bean
     public GrpcChannelFactory addressChannelFactory(GrpcChannelsProperties channels, LoadBalancer.Factory loadBalancerFactory, GlobalClientInterceptorRegistry globalClientInterceptorRegistry) {
@@ -49,9 +67,14 @@ public class GrpcClientAutoConfiguration {
     @Bean
     @ConditionalOnClass(GrpcClient.class)
     public GrpcClientBeanPostProcessor grpcClientBeanPostProcessor() {
+
         return new GrpcClientBeanPostProcessor();
     }
 
+    /**
+     * DiscoveryClient这个类是注册中心的类，可以从这里拿到注册中心的链接地址和端口（gRPC）
+     * 当这个类实例化时才 实例化这个bean
+     */
     @Configuration
     @ConditionalOnBean(DiscoveryClient.class)
     protected static class DiscoveryGrpcClientAutoConfiguration {
@@ -64,6 +87,9 @@ public class GrpcClientAutoConfiguration {
         }
     }
 
+    /**
+     * grpc拦截器 扩展点 依赖Tracer实例化且配置为true 然后实例化
+     */
     @Configuration
     @ConditionalOnProperty(value = "spring.sleuth.scheduled.enabled", matchIfMissing = true)
     @ConditionalOnClass(Tracer.class)

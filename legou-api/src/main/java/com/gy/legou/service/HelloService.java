@@ -21,7 +21,7 @@ public class HelloService {
     @Value("${foo}")
     String foo;
 
-    @HystrixCommand(fallbackMethod = "hiError")
+    //@HystrixCommand(fallbackMethod = "hiError")
     public String hiService(String name) {
         System.out.println("server:"+foo);
         return restTemplate.getForObject("http://legou-server/hi?name="+name,String.class);

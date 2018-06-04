@@ -4,10 +4,12 @@ import com.netflix.zuul.FilterFileManager;
 import com.netflix.zuul.FilterLoader;
 import com.netflix.zuul.groovy.GroovyCompiler;
 import com.netflix.zuul.groovy.GroovyFileFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
@@ -21,6 +23,8 @@ import java.io.File;
 @EnableEurekaClient
 @SpringBootApplication
 public class ServiceZuulApplication {
+    @Autowired
+    private Environment env;
     public static void main(String[] args) {
 
         SpringApplication.run(ServiceZuulApplication.class, args);
@@ -30,9 +34,12 @@ public class ServiceZuulApplication {
     public void zuulInit() {
         FilterLoader.getInstance().setCompiler(new GroovyCompiler());
         // 读取配置，获取脚本根目录
-        String scriptRoot = System.getProperty("zuul.filter.root", "/work/zuul/filter/groovy");
+        //String scriptRoot = System.getProperty("zuul.filter.root", "/work/zuul/filter/groovy");
+        String scriptRoot = env.getProperty("zuul.filter.root", "/work/zuul/filter/groovy1");
         // 获取刷新间隔
-        String refreshInterval = System.getProperty("zuul.filter.refreshInterval", "5");
+        //String refreshInterval = System.getProperty("zuul.filter.refreshInterval", "5");
+        String refreshInterval = env.getProperty("zuul.filter.refreshInterval", "5");
+
         if (scriptRoot.length() > 0) scriptRoot = scriptRoot + File.separator;
         try {
             FilterFileManager.setFilenameFilter(new GroovyFileFilter());

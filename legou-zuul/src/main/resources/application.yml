@@ -9,8 +9,8 @@ spring:
     name: legou-zuul
 zuul:
   filter:
-    root: “/work/zuul/filter/groovy”
-    refreshInterval: 5
+    root: /work/zuul/filter/groovy
+    refreshInterval: 6
   routes:
     legou-server:
       path: /api-a/**
@@ -19,3 +19,4 @@ zuul:
     legou-server1:
       path: /api-c/**
       serviceId: legou-server
+  ignored-services: '*'

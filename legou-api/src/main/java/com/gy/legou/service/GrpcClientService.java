@@ -32,6 +32,7 @@ public class GrpcClientService {
 
         SimpleGrpc.SimpleBlockingStub stub = SimpleGrpc.newBlockingStub(serverChannel);
         HelloReply response = stub.sayHello(HelloRequest.newBuilder().setName(name).build());
-        return response.getMessage();
+        HelloReply responseHi = stub.sayHi(HelloRequest.newBuilder().setName(name).build());
+        return response.getMessage() + responseHi.getMessage();
     }
 }

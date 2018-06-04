@@ -37,3 +37,7 @@ spring:
 #    bootstrap-servers: 10.58.93.148:9092
 logging.level.org.springframework.cloud.sleuth: DEBUG
 logging.level.org.springframework.web.servlet.DispatcherServlet: DEBUG
+grpc.server.port: 6666
+grpc:
+  server:
+    address: 10.58.93.148
