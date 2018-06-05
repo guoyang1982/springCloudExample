@@ -18,6 +18,7 @@ public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
 
     @Override
     public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+        System.out.println("fanhui?????????????????");
         HelloReply reply = HelloReply.newBuilder().setMessage("Hello2 =============> " + req.getName()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
@@ -25,8 +26,12 @@ public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
 
     @Override
     public void sayHi(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+        System.out.println("fanhui?????????????????");
+
         HelloReply reply = HelloReply.newBuilder().setMessage("Hi2 =============> " + req.getName()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
+        System.out.println("fanhui11111?????????????????");
+
     }
 }

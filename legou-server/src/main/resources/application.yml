@@ -6,7 +6,7 @@ eureka:
     serviceUrl:
       defaultZone: http://10.58.93.148:8081/eureka/,http://10.58.93.148:8082/eureka/,http://10.58.93.148:8083/eureka/
 server:
-  port: ${SERVER_PORT:8761}
+  port: ${SERVER_PORT:8766}
 spring:
   application:
     name: legou-server
@@ -37,7 +37,7 @@ spring:
 #    bootstrap-servers: 10.58.93.148:9092
 logging.level.org.springframework.cloud.sleuth: DEBUG
 logging.level.org.springframework.web.servlet.DispatcherServlet: DEBUG
-grpc.server.port: 6666
+grpc.server.port: ${GRP_SERVER_PORT:6662}
 grpc:
   server:
     address: 10.58.93.148
